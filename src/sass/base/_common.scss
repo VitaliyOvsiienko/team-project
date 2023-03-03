@@ -1,0 +1,174 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+html {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+button {
+    border-width: 0px;
+    cursor: pointer;
+}
+
+
+body {
+    font-family: $font-montserrat;
+    color: $primary-dark;
+    background-color: $primary-light;
+    background-image: url('../images/body/background-mobile.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+body.modal-open,
+body.no-scroll {
+    overflow: hidden;
+}
+    
+    @media (min-device-pixel-ratio: 2),
+    (-webkit-min-device-pixel-ratio: 2),
+    (min-resolution: 192dpi),
+    (min-resolution: 2dppx) {
+        body {
+            background-image: url('../images/body/background-mobile-2x.jpg');
+        }
+    }
+    
+    @media screen and (min-width:768px) {
+        body {
+            background-image: url(../images/body/background-tablet.jpg);
+        }
+    
+        @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            body {
+                background-image: url('../images/body/background-tablet-2x.jpg');
+            }
+        }
+    }
+    
+    @media screen and (min-width:1200px) {
+        body {
+            background-image: url(../images/body/background-desktop.jpg);
+        }
+    
+        @media (min-device-pixel-ratio: 2),
+        (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi),
+        (min-resolution: 2dppx) {
+            body {
+                background-image: url('../images/body/background-desktop-2x.jpg');
+            }
+        }
+}
+
+.container {
+    margin: 0 auto;
+    padding: 0 20px;
+    width:100%;
+
+    @media screen and (min-width:480px) {
+        width: 480px;
+    }
+
+    @media screen and (min-width:768px) {
+        width: 768px;
+        padding: 0 32px;
+    }
+
+    @media screen and (min-width:1200px) {
+        width: 1200px;
+        padding: 0 16px;
+    }
+
+}
+
+.modal-general {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 280px;
+    padding: 28px;
+    transform: translate(-50%, -50%);
+    transition: transform 300ms linear;
+    background-color: $primary-light;
+    border-radius: 10px;
+    border: 2px solid $primary-yellow;
+
+    @include tablet {
+        padding: 32px 60px;
+        width: 568px;
+    }
+
+    @include desktop {
+        transform: translate(-50%, -50%);
+    }
+}
+
+.backdrop .header-modal,
+.backdrop .products-modal,
+.backdrop .modal-franchise {
+    transform: translate(-50%, -45vh);
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 5vh;
+        display: block;
+        position: absolute;
+    }
+    @include desktop {
+        transform: translate(-50%, -50%);
+
+        &::after {
+            content: '';
+            height:0vh;
+    }
+}
+}
+
+/*-------Shaking arrows in product section-----*/
+@keyframes tilt-shaking {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0eg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/*-----h2 animation-----*/
+.title-anim {
+    animation: fadeInTop 1s ease-in both;
+}
+@keyframes fadeInTop {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -20%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

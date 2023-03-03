@@ -1,0 +1,237 @@
+.footer-main {
+  background-color: $primary-green;
+  padding-top: 30px;
+  @include tablet {
+    padding-top: 20px;
+  }
+  @include desktop {
+    padding-top: 60px;
+  }
+}
+.footer-company-info {
+  margin-bottom: 40px;
+  @include tablet {
+    display: flex;
+    align-items: center;
+    margin-bottom: 48px;
+  }
+  @include desktop {
+    margin-bottom: 60px;
+  }
+}
+
+.slogan-container {
+  width: 280px;
+
+  @include tablet {
+    width: 352px;
+  }
+  @include desktop {
+    width: auto;
+  }
+}
+.footer-title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: $primary-light;
+
+  @include tablet {
+    font-size: 26px;
+    letter-spacing: 0.04em;
+  }
+  @include desktop {
+    font-size: 30px;
+  }
+}
+.footer-title-span {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 60px;
+  font-size: 34px;
+  letter-spacing: 0.04em;
+  color: $primary-light;
+
+  @include tablet {
+    margin-top: 8px;
+    margin-bottom: 32px;
+    font-size: 48px;
+    letter-spacing: 0.06em;
+  }
+
+  @include desktop {
+    margin-top: 14px;
+    margin-bottom: 0;
+    font-size: 58px;
+    line-height: calc(71 / 58);
+  }
+}
+.ftr-contacts {
+  text-align: end;
+
+  @include tablet {
+    margin-left: auto;
+  }
+}
+.footer-social-list {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+
+  @include tablet {
+    margin-bottom: 34px;
+  }
+  @include desktop {
+    margin-bottom: 40px;
+  }
+}
+
+.footer-social-item {
+  border-radius: 50%;
+  background-color: $primary-yellow;
+
+  &:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+.footer-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  color: $primary-green;
+  transition: all 0.5s ease;
+
+  &:hover,
+  &:focus {
+    color: $primary-light;
+  }
+}
+
+.footer-social-icon {
+  fill: currentColor;
+}
+.footer-contact-tel {
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.8;
+  color: $primary-dark;
+
+  @include tablet {
+    font-size: 14px;
+  }
+  @include desktop {
+    font-size: 16px;
+  }
+}
+.footer-tel-number {
+  color: $primary-light;
+}
+
+.footer-wrap {
+  display: flex;
+  width: 100%;
+  border-top: 1px solid $grey-divider;
+  padding:20px;
+  @include tablet {
+    padding: 12px 32px;
+  }
+  @include desktop {
+    padding: 12px 0;
+    margin: 0 16px;
+    justify-content: center;
+    width: auto;
+  }
+}
+.footer-copyright {
+  display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    width: 100%;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 700;
+  color: $dark-grey;
+
+  @include tablet {
+    flex-direction: row;
+    justify-content: space-between;
+    
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+  @include desktop {
+    font-size: 12px;
+    max-width:1200px;
+    padding:0 16px;
+  }
+}
+.footer-rights {
+  width: 280px;
+  @media screen and (max-width:767px) {
+    margin-bottom: 12px;
+  }
+  @include tablet {
+    width: auto;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+  }
+}
+.footer-team {
+  width: 280px;
+
+  @include tablet {
+    width: auto;
+  }
+}
+
+.footer-team-link {
+  color: $primary-yellow;
+}
+
+  .back-to-top {
+    background-color: #ed5198;
+    text-decoration: none;
+    cursor: pointer;
+    width: 42px;
+    height: 42px;
+    z-index: 49;
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 100%;
+
+    rotate: -90deg;
+    animation: shadow-pulse 1.5s infinite;
+
+    &:hover {
+      background-color: lighten(#ed5198, 12%);
+    }
+
+    &:active {
+      box-shadow: none;
+      background-color: darken(#ed5198, 12%);
+    }
+    @keyframes shadow-pulse {
+      0% {
+        box-shadow: 0 0 0 0px rgba(0, 0, 0, 0.2);
+      }
+      100% {
+        box-shadow: 0 0 0 20px rgba(0, 0, 0, 0);
+      }
+    }
+
+    svg.icon__arrow-up {
+      fill: $primary-light;
+      width: 24px;
+      height: 24px;
+    }
+  }
